@@ -1,5 +1,5 @@
 #  Secure Plugin remover for macOS
-[Image1](run-1.png)
+[Image1](https://raw.githubusercontent.com/thy2134/MacSAFER/master/images/run-1.png)
 
 ## Description
 This program removed malicious secure plugins installed from Korean E-Commerce, Government, Internet Banking websites to make your mac clean.
