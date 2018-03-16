@@ -1,9 +1,9 @@
 #  Secure Plugin remover for macOS
-[Image1](https://raw.githubusercontent.com/thy2134/MacSAFER/master/images/run-1.png)
+![Image1](https://raw.githubusercontent.com/thy2134/MacSAFER/master/images/run-1.png)
 
 ## Description
 This program removed malicious secure plugins installed from Korean E-Commerce, Government, Internet Banking websites to make your mac clean.
-This program is simillar to !["구라제거기"](http://teus.me/427) which works on Windows systems.
+This program is simillar to ["구라제거기"](http://teus.me/427) which works on Windows systems.
 ## Requirements
 - Python 3
 
