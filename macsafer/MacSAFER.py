@@ -91,7 +91,7 @@ def run():
                 loaded['File'][key].append(item)
 
     count = len(loaded['App'].keys()) + len(loaded['File'].keys())
-    print('Found', count, 'softwares')
+    print('Found', count, 'software' + ('s' if count > 1 else ''))
     if count <= 0:
         return 0
     for (key, value) in loaded['App'].items():

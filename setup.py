@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='MacSAFER',
-    version='1.0',
+    version='1.1',
     url='https://github.com/thy2134/MacSAFER',
     license='GPLv3',
     author='Kyujin Cho',
@@ -20,6 +20,6 @@ setup(name='MacSAFER',
     packages=find_packages(exclude=['test', 'doc']),
     zip_safe=False,
     entry_points= {
-        'console_scripts': ['macsafer=runnable.command_line:main']
+        'console_scripts': ['macsafer=macsafer.command_line:main']
     }
 )
