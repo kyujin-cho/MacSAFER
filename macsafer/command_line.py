@@ -1,4 +1,4 @@
-import runnable.MacSAFER
+import macsafer.MacSAFER
 
 def main():
-    return runnable.MacSAFER.run()
+    return macsafer.MacSAFER.run()

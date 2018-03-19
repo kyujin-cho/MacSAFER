@@ -2,69 +2,37 @@ import subprocess
 import os
 import sys
 import getpass
-
-knownPlugins = {
-    "Ahnlab Safe Transaction": "/Applications/AhnLab/ASTx/Uninstaller.app/Contents/MacOS/astxUninstaller",
-    "TouchEnEx": "/Applications/CrossEX/touchenex/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX",
-    "CrossWeb": "/Applications/CrossWeb/UninstallCrossWeb.app/Contents/MacOS/UninstallCrossWeb",
-    "CrossWebEX": "/Applications/CrossWebEX/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX",
-    "Delfino": "/Applications/Delfino/Uninstaller.app/Contents/MacOS/Uninstaller",
-    "Ahnlab Online Security": "/Applications/AhnLab/ASP/Firewall/Uninstaller.app/Contents/MacOS/ahnlabfwUninstaller",
-    "INISAFE MoaSign Ex": "/Applications/INISAFE MoaSign EX Uninstaller.app/Contents/MacOS/INISAFE MoaSign EX Uninstaller",
-    "INISAFE MoaSign S": "/Applications/INISAFE MoaSign S Unintaller.app/Contents/MacOS/INISAFE MoaSign S Unintaller",
-    "nProtect Online Security V1": "/Applications/nProtect/nProtect Online Security V1/NOS/nosuninst.app/Contents/MacOS/nosuninst",
-    "nProtect Netizen": "/Applications/nProtect Netizen/netizen Uninstaller.app/Contents/MacOS/netizen Uninstaller",
-    "NWS IPInside": "/Applications/NWS_IPinside/NWSUninstaller.app/Contents/MacOS/NWSUninstaller",
-    "IPInside": "/Applications/IPinside.app/Contents/MacOS/IPinside",
-    "RaonK": "/Applications/raonk/uninstall.app/Contents/MacOS/uninstall.sh",
-    "AnySign for PC": "/Applications/SoftForum/Uninstaller_AnySign4PC.app/Contents/MacOS/Uninstaller",
-    "Veraport": "/Applications/Veraport/veraport.app/Contents/MacOS/veraport"
-}
-
-customDeleteFiles = {
-    "UniCRSV2": [
-        "/Library/Internet Plug-Ins/npUniCRSV2Plugin.plugin"
-    ],
-    "UniSignWeb": [
-        "/Library/Internet Plug-Ins/npUniSignWebPlugin.plugin"
-    ],
-    "Printmade3": [
-        "/Library/Internet Plug-Ins/Printmade3",
-        "/Library/Internet Plug-Ins/Printmade3NPPlugin.plugin"
-    ],
-    "CrossEX": [
-        "/Applications/CrossEX"
-    ],
-    "AhnLab": [
-        "/Applications/AhnLab"
-    ],
-    "Veraport": [
-        "/Applications/Veraport",
-        "/Library/Internet Plug-Ins/Veraport.plugin"
-    ],
-    "I3GManager": [
-        "/Library/Internet Plug-Ins/NPI3GManager.plugin"
-    ],
-    "MarkAny": [
-        "/Applications/MaSafeViewer.app",
-        "/Applications/MDMBroker.app"
-    ],
-    "NTS": [
-       "/Applications/NTSFileCryptNP.app",
-        "/Applications/NTSMagicLineNP.app",
-        "/Applications/NTSMagicXMLSecurityNP.app" 
-    ]
-}
+import requests
+import json
+import sys
 
 def run():
+    if sys.platform != 'darwin':
+        print('This program works on macOS only.')
+        return 1
+    print(sys.argv)
+    data_url = 'https://raw.githubusercontent.com/thy2134/MacSAFER/master/plugins.json'
+    json_datas = requests.get(data_url)
+    if json_datas.status_code != 200:
+        print('Error fetching plugin data!')
+        print('URL =>', data_url)
+        exit(1)
+    knownPlugins, customDeleteFiles = None, None
+    try:
+        json_data = json.loads(json_datas.text)
+        customDeleteFiles = json_data['customDeleteFiles']
+        knownPlugins = json_data['knownPlugins']
+    except:
+        print('Error while loading data!')
+        print('Response data =>')
+        print(json_datas.text)
+        exit(1)
+    
     loaded = {
         'App': {},
         'File': {}
     }
 
-    if sys.platform != 'darwin':
-        print('This program works on macOS only.')
-        return 1
 
     p = subprocess.Popen(['whoami'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     whoami = p.stdout.readline().decode('utf-8')
