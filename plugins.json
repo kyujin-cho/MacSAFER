@@ -16,8 +16,7 @@
         "RaonK": "/Applications/raonk/uninstall.app/Contents/MacOS/uninstall.sh",
         "AnySign for PC": "/Applications/SoftForum/Uninstaller_AnySign4PC.app/Contents/MacOS/Uninstaller",
         "Veraport": "/Applications/Veraport/veraport.app/Contents/MacOS/veraport",
-        "CrossWarpEX": "/Applications/CrossWarpEX/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX",
-
+        "CrossWarpEX": "/Applications/CrossWarpEX/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX"
     },
     "customDeleteFiles": {
         "UniCRSV2": [
