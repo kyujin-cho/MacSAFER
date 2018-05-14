@@ -2,6 +2,7 @@
     "knownPlugins": {
         "Ahnlab Safe Transaction": "/Applications/AhnLab/ASTx/Uninstaller.app/Contents/MacOS/astxUninstaller",
         "TouchEnEx": "/Applications/CrossEX/touchenex/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX",
+        "TouchEn nxKey": "/Applications/TouchEn nxKey/TKUninstall.app/Contents/MacOS/TKUninstall",
         "CrossWeb": "/Applications/CrossWeb/UninstallCrossWeb.app/Contents/MacOS/UninstallCrossWeb",
         "CrossWebEX": "/Applications/CrossWebEX/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX",
         "Delfino": "/Applications/Delfino/Uninstaller.app/Contents/MacOS/Uninstaller",
@@ -14,7 +15,9 @@
         "IPInside": "/Applications/IPinside.app/Contents/MacOS/IPinside",
         "RaonK": "/Applications/raonk/uninstall.app/Contents/MacOS/uninstall.sh",
         "AnySign for PC": "/Applications/SoftForum/Uninstaller_AnySign4PC.app/Contents/MacOS/Uninstaller",
-        "Veraport": "/Applications/Veraport/veraport.app/Contents/MacOS/veraport"
+        "Veraport": "/Applications/Veraport/veraport.app/Contents/MacOS/veraport",
+        "CrossWarpEX": "/Applications/CrossWarpEX/UnInstallCrossEX.app/Contents/MacOS/UnInstallCrossEX",
+
     },
     "customDeleteFiles": {
         "UniCRSV2": [
@@ -48,6 +51,14 @@
            "/Applications/NTSFileCryptNP.app",
             "/Applications/NTSMagicLineNP.app",
             "/Applications/NTSMagicXMLSecurityNP.app" 
+        ]
+    },
+    "scripts": {
+        "ToucEn nxFirewall": [
+            {
+                "path": "/Applications/TouchEnnxFirewall/TEFW_Uninstaller.pkg",
+                "command": "open /Applications/TouchEnnxFirewall/TEFW_Uninstaller.pkg"
+            }
         ]
     }
 }
