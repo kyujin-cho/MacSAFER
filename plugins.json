@@ -53,10 +53,10 @@
         ]
     },
     "scripts": {
-        "ToucEn nxFirewall": [
+        "TouchEn nxFirewall": [
             {
-                "path": "/Applications/TouchEnnxFirewall/TEFW_Uninstaller.pkg",
-                "command": "open /Applications/TouchEnnxFirewall/TEFW_Uninstaller.pkg"
+                "path": "/Applications/raonsecure/TouchEnnxFirewall/TEFW_Uninstaller.pkg",
+                "command": "open /Applications/raonsecure/TouchEnnxFirewall/TEFW_Uninstaller.pkg"
             }
         ]
     }
