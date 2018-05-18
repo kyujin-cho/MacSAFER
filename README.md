@@ -2,7 +2,7 @@
 ![Image1](https://raw.githubusercontent.com/thy2134/MacSAFER/master/images/run-1.png)
 
 ## Description
-This program removed malicious secure plugins installed from Korean E-Commerce, Government, Internet Banking websites to make your mac clean.
+This program removes any known malicious secure plugins installed from Korean E-Commerce, Government, Internet Banking websites. As those programs consume lots of resources on your mac, removing these will result in a notifiable performance enhancement.    
 This program is simillar to ["구라제거기"](http://teus.me/427) which works on Windows systems.
 ## Requirements
 - Python 3
