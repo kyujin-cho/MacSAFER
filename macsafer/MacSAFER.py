@@ -68,9 +68,9 @@ def run():
     for (key, value) in loaded['File'].items():
         for item in value:
             print(key, '=>', item)
-
+    yn_available = ['Y', 'y']
     yn = input('Deleting ' + str(count) + ' items. Continue? [Y/n]')
-    if yn != '' and yn != 'Y':
+    if yn not in yn_available :
         print('Aborting...')
         return 0
 
